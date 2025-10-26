@@ -1,52 +1,87 @@
-import websiteImg1 from '../assets/ecommerce-websites.jpg';
-import websiteImg2 from '../assets/food-ecommerce.jpg';
-import websiteImg3 from '../assets/website-blog.jpg';
+import websiteImg1 from "../assets/book world project.png";
+import websiteImg2 from "../assets/Chatbot-Project.png";
+import websiteImg3 from "../assets/YOUTUBE PROJECT.png";
 
 export default function Projects() {
+  const projects = [
+    {
+      image: websiteImg1,
+      description:
+        "📚 BookWorld: A dynamic book store UI with category filters and cart functionality. Built with React.",
+      link: "https://dhamayanthi2211.github.io/BookWorld-Project/",
+    },
+    {
+      image: websiteImg2,
+      description:
+        "🎥 YouTube Clone: A responsive video streaming UI with search and playback features. Built with React and RapidAPI.",
+      link: "https://dhamayanthi2211.github.io/Youtube-Project/",
+    },
+    {
+      image: websiteImg3,
+      description:
+        "🤖 Chatbot UI: A sleek and interactive chatbot interface with animated transitions. Built with HTML, CSS, and JavaScript.",
+      link: "https://dhamayanthi2211.github.io/Chatbot-Project/",
+    },
+  ];
 
-    const config = {
-        projects : [
-            {
-                image: websiteImg1,
-                description: 'A Ecommerce Website. Built with MERN Stack.',
-                link: 'https://github.com/jvlcode/jvlcart'
-            },
-            {
-                image: websiteImg2,
-                description: 'Food Ecommerce website like Swiggy, Built with Angular & .Net',
-                link: 'https://github.com/jvlcode/food'
-            },
-            {
-                image: websiteImg3,
-                description: 'Basic Blog Website . Built with Next JS and MongoDB',
-                link: 'https://github.com/jvlcode/blog'
-            }
-        ]
-    }
+  return (
+    <section
+      id="projects"
+      className="flex flex-col py-24 px-6 justify-center bg-black text-white relative overflow-hidden"
+    >
+      {/* Glowing border ring */}
+      <div className="absolute inset-0 border-4 border-fuchsia-500 rounded-xl opacity-10 blur-2xl pointer-events-none animate-pulse"></div>
 
-    return <section id='projects' className="flex  flex-col py-20 px-5 justify-center bg-primary text-white">
-        <div className="w-full">
-            <div className="flex flex-col px-10 py-5">
-                <h1 className="text-4xl border-b-4 border-secondary mb-5 w-[150px] font-bold">Projects</h1>
-                <p>These are some of my best projects. I have built these with React, MERN and vanilla CSS. Check them out.</p>
+      <div className="w-full text-center mb-16 z-10">
+        <h1
+          className="text-6xl font-extrabold tracking-widest uppercase text-transparent bg-clip-text 
+  bg-gradient-to-r from-blue-400 via-yellow-400 via-violet-500 to-pink-500 
+  drop-shadow-[0_0_25px_#ff00ff] hover:drop-shadow-[0_0_45px_#ff00ff] 
+  transition-all duration-500 text-center mb-8"
+        >
+          My Projects
+        </h1>
+
+        <p
+          className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed text-center 
+  bg-gradient-to-r from-fuchsia-500 via-pink-500 to-purple-600 bg-clip-text text-transparent 
+  drop-shadow-[0_0_10px_#fuchsia] hover:drop-shadow-[0_0_20px_#fuchsia] transition-all duration-500"
+        >
+          Explore my portfolio showcasing frontend, full-stack, and static
+          website projects. Each one reflects technical expertise, creative
+          design, and real-world problem-solving.
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 z-10">
+        {projects.map((project, index) => (
+          <div
+            key={index}
+            className="relative group rounded-xl overflow-hidden shadow-[0_0_20px_#fuchsia] border border-gray-800 hover:border-fuchsia-500 transition-all duration-500 bg-[#111]"
+          >
+            <div className="w-full h-0 pb-[56.25%] relative">
+              <img
+                className="absolute top-0 left-0 w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 shadow-[0_0_15px_#fuchsia]"
+                src={project.image}
+                alt={`Project ${index + 1}`}
+              />
             </div>
-        </div>
-        <div className="w-full">
-            <div className='flex flex-col md:flex-row px-10 gap-5'>
-                {config.projects.map((project) => (
-                     <div className='relative'>
-                        <img className='h-[200px] w-[500px]' src={project.image}/>
-                        <div className='project-desc'>
-                            <p className='text-center px-5 py-5'>{project.description}</p>
-                            <div className='flex justify-center'>
-                                <a className='btn' target='_blank' href={project.link}>View Project</a>
-                            </div>
-                        </div>
-                    </div>
-                ))}
-               
-               
+            <div className="absolute inset-0 bg-black bg-opacity-80 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-center items-center text-center px-6">
+              <p className="text-white text-base font-medium mb-4 leading-relaxed">
+                {project.description}
+              </p>
+              <a
+                className="bg-gradient-to-r from-fuchsia-500 via-pink-500 to-purple-600 text-white px-5 py-2 rounded-full font-bold hover:from-white hover:to-white hover:text-black transition-all duration-300 shadow-lg"
+                target="_blank"
+                rel="noopener noreferrer"
+                href={project.link}
+              >
+                🔗 View Project
+              </a>
             </div>
-        </div>
+          </div>
+        ))}
+      </div>
     </section>
+  );
 }
