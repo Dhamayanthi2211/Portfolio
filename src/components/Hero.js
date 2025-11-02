@@ -18,14 +18,16 @@ export default function Hero() {
   };
 
   return (
-    <section className="flex flex-col md:flex-row items-center justify-center md:justify-between min-h-screen px-8 py-16 bg-primary">
+    <section className="flex flex-col md:flex-row items-center justify-between min-h-screen px-8 py-16 bg-primary">
       {/* Left Section */}
-      <div className="md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left">
-        <h1 className="text-white text-4xl sm:text-5xl md:text-6xl font-bold leading-tight">
-          Hi, <br />
-          I'm{" "}
-          <span className="bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-500 bg-clip-text text-transparent animate-pulse">
-            {config.name}
+      <div className="md:w-[52%] flex flex-col items-center md:items-start text-center md:text-left justify-center">
+        <h1 className="text-white text-4xl sm:text-5xl md:text-[3.4rem] font-bold leading-tight md:leading-[1.2]">
+          Hi,&nbsp;
+          <span className="whitespace-nowrap">
+            I'm{" "}
+            <span className="bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-500 bg-clip-text text-transparent animate-pulse">
+              {config.name}
+            </span>
           </span>
         </h1>
 
@@ -76,14 +78,12 @@ export default function Hero() {
       </div>
 
       {/* Right Section - Image */}
-      <div className="md:w-1/2 flex justify-center mt-10 md:mt-0">
-      <img
-  src={HeroImg}
-  alt="Dhamayanthi M"
-  className="w-full max-w-[400px] h-[420px] object-cover rounded-t-[0.75rem] rounded-b-[3rem] transition-transform duration-500 hover:scale-105 shadow-xl"
-/>
-
-
+      <div className="md:w-[48%] flex justify-center items-center md:-ml-10 lg:-ml-16">
+        <img
+          src={HeroImg}
+          alt="Dhamayanthi M"
+          className="w-full max-w-[340px] h-[400px] object-cover rounded-t-[0.75rem] rounded-b-[3rem] shadow-xl transition-transform duration-500 hover:scale-105"
+        />
       </div>
     </section>
   );
