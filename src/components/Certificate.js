@@ -37,7 +37,7 @@ export default function Certificate() {
       {/* Heading */}
       <div className="w-full text-center mb-16 z-10">
         <h1
-          className="text-6xl font-extrabold tracking-widest uppercase text-transparent bg-clip-text 
+          className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-widest uppercase text-transparent bg-clip-text 
           bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-500 
           drop-shadow-[0_0_25px_#ff00ff] hover:drop-shadow-[0_0_45px_#ff00ff] 
           transition-all duration-500 mb-6"
@@ -46,7 +46,7 @@ export default function Certificate() {
         </h1>
 
         <p
-          className="text-lg max-w-3xl mx-auto leading-relaxed text-center 
+          className="text-sm sm:text-base md:text-lg max-w-3xl mx-auto leading-relaxed text-center 
           text-transparent bg-clip-text bg-gradient-to-r from-gray-200 via-gray-300 to-gray-400 
           drop-shadow-[0_0_8px_#c084fc]"
         >
@@ -78,7 +78,9 @@ export default function Certificate() {
                 {cert.title}
               </h2>
               <p className="text-sm text-gray-400 mb-4">{cert.date}</p>
-              <span className="text-xs text-gray-300 italic">Click to view full</span>
+              <span className="text-xs text-gray-300 italic">
+                Click to view full
+              </span>
             </div>
           </div>
         ))}

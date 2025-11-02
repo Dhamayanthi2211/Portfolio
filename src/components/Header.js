@@ -1,54 +1,70 @@
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid'
-import { useState, useEffect } from 'react'
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
+import { useState, useEffect } from "react";
 
 export default function Header() {
-  const [toggleMenu, setToggleMenu] = useState(false)
-  const [animateHeader, setAnimateHeader] = useState(false)
+  const [toggleMenu, setToggleMenu] = useState(false);
+  const [animateHeader, setAnimateHeader] = useState(false);
 
   useEffect(() => {
-    setAnimateHeader(true)
-  }, [])
+    setAnimateHeader(true);
+  }, []);
 
-  // Smooth scroll + close menu
+  // Smooth scroll function
   const handleNavClick = (id) => {
-    setToggleMenu(false)
+    setToggleMenu(false);
 
-    if (id === '#home') {
-      // Scroll smoothly to the top for "Home"
-      window.scrollTo({ top: 0, behavior: 'smooth' })
-      return
+    if (id === "#home") {
+      const heroSection = document.querySelector("#hero");
+      if (heroSection) heroSection.scrollIntoView({ behavior: "smooth" });
+      else window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
     }
 
-    const section = document.querySelector(id)
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' })
-    }
-  }
+    // ✅ Special fix for Certificates section (your section id is #certificates)
+    if (id === "#certificate") id = "#certificates";
+
+    const section = document.querySelector(id);
+    if (section) section.scrollIntoView({ behavior: "smooth" });
+  };
+
+  // ✅ Added “Certificates” to menu
+  const menuItems = [
+    "Home",
+    "About",
+    "Projects",
+    "Resume",
+    "Certificates",
+    "Contact",
+  ];
 
   return (
     <header
       className={`fixed top-0 left-0 w-full z-50 flex justify-between items-center px-5 py-4 bg-primary/90 backdrop-blur-md shadow-md border-b border-white/10 transition-all duration-700 ${
-        animateHeader ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-5'
+        animateHeader ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-5"
       }`}
     >
       {/* Logo */}
       <a
         className="font-extrabold text-transparent text-xl bg-clip-text bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-600 tracking-wide cursor-pointer"
-        onClick={() => handleNavClick('#home')}
+        onClick={() => handleNavClick("#home")}
       >
-        <span className="text-2xl font-extrabold tracking-wide text-white">DM</span>
+        <span className="text-2xl font-extrabold tracking-wide text-white">
+          DM
+        </span>
       </a>
 
-      {/* Desktop Nav */}
+      {/* Desktop Menu */}
       <nav className="hidden md:block">
         <ul className="flex space-x-8 text-white font-medium">
-          {['Home', 'About', 'Projects', 'Resume', 'Contact'].map((item) => (
+          {menuItems.map((item) => (
             <li
               key={item}
               className="hover:text-yellow-300 transition duration-300 transform hover:-translate-y-1 hover:scale-110"
             >
               <button
-                onClick={() => handleNavClick(`#${item.toLowerCase()}`)}
+                onClick={() =>
+                  handleNavClick(`#${item.toLowerCase()}`)
+                }
                 className="focus:outline-none"
               >
                 {item}
@@ -74,18 +90,20 @@ export default function Header() {
       <div
         className={`absolute left-0 top-full w-full backdrop-blur-xl bg-gray-900/85 border-t border-white/10 rounded-b-2xl shadow-lg transition-all duration-500 ease-in-out md:hidden ${
           toggleMenu
-            ? 'max-h-[500px] opacity-100 translate-y-0'
-            : 'max-h-0 opacity-0 -translate-y-2'
+            ? "max-h-[500px] opacity-100 translate-y-0"
+            : "max-h-0 opacity-0 -translate-y-2"
         } overflow-hidden`}
       >
         <ul className="flex flex-col items-center py-6 space-y-5 text-white font-semibold tracking-wide">
-          {['Home', 'About', 'Projects', 'Resume', 'Contact'].map((item) => (
+          {menuItems.map((item) => (
             <li
               key={item}
               className="w-full text-center py-3 hover:text-yellow-300 hover:bg-white/10 rounded-lg transition duration-300"
             >
               <button
-                onClick={() => handleNavClick(`#${item.toLowerCase()}`)}
+                onClick={() =>
+                  handleNavClick(`#${item.toLowerCase()}`)
+                }
                 className="w-full"
               >
                 {item}
@@ -95,5 +113,5 @@ export default function Header() {
         </ul>
       </div>
     </header>
-  )
+  );
 }
