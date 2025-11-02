@@ -20,14 +20,12 @@ export default function Header() {
       return;
     }
 
-    // ✅ Special fix for Certificates section (your section id is #certificates)
     if (id === "#certificate") id = "#certificates";
 
     const section = document.querySelector(id);
     if (section) section.scrollIntoView({ behavior: "smooth" });
   };
 
-  // ✅ Added “Certificates” to menu
   const menuItems = [
     "Home",
     "About",
@@ -43,10 +41,14 @@ export default function Header() {
         animateHeader ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-5"
       }`}
     >
-      {/* Logo */}
+      {/* ✅ Logo fixed for accessibility */}
       <a
-        className="font-extrabold text-transparent text-xl bg-clip-text bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-600 tracking-wide cursor-pointer"
-        onClick={() => handleNavClick("#home")}
+        href="#home"
+        onClick={(e) => {
+          e.preventDefault();
+          handleNavClick("#home");
+        }}
+        className="font-extrabold text-transparent text-xl bg-clip-text bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-600 tracking-wide cursor-pointer focus:outline-none"
       >
         <span className="text-2xl font-extrabold tracking-wide text-white">
           DM
@@ -62,9 +64,7 @@ export default function Header() {
               className="hover:text-yellow-300 transition duration-300 transform hover:-translate-y-1 hover:scale-110"
             >
               <button
-                onClick={() =>
-                  handleNavClick(`#${item.toLowerCase()}`)
-                }
+                onClick={() => handleNavClick(`#${item.toLowerCase()}`)}
                 className="focus:outline-none"
               >
                 {item}
@@ -101,10 +101,8 @@ export default function Header() {
               className="w-full text-center py-3 hover:text-yellow-300 hover:bg-white/10 rounded-lg transition duration-300"
             >
               <button
-                onClick={() =>
-                  handleNavClick(`#${item.toLowerCase()}`)
-                }
-                className="w-full"
+                onClick={() => handleNavClick(`#${item.toLowerCase()}`)}
+                className="w-full focus:outline-none"
               >
                 {item}
               </button>
