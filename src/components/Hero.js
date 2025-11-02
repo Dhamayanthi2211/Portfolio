@@ -7,7 +7,7 @@ import {
 
 export default function Hero() {
   const config = {
-    name: "DHAMAYANTHI M", // added non-breaking space between words
+    name: "DHAMAYANTHI M",
     subtitle:
       "I’m a passionate Full Stack Web Developer specializing in the MERN Stack, creating modern and scalable web applications.",
     social: {
@@ -18,24 +18,23 @@ export default function Hero() {
   };
 
   return (
-    <section className="flex flex-col md:flex-row px-5 py-24 md:py-32 bg-primary justify-center items-center md:items-start gap-10">
-      {/* Left Content */}
+    <section className="flex flex-col md:flex-row items-center justify-center md:justify-between min-h-screen px-8 py-16 bg-primary">
+      {/* Left Section */}
       <div className="md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left">
-        <h1 className="text-white text-4xl sm:text-5xl md:text-6xl font-bold leading-tight tracking-tight">
+        <h1 className="text-white text-4xl sm:text-5xl md:text-6xl font-bold leading-tight">
           Hi, <br />
           I'm{" "}
-          <span className="whitespace-nowrap bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-500 bg-clip-text text-transparent animate-pulse">
-            DHAMAYANTHI&nbsp;M
+          <span className="bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-500 bg-clip-text text-transparent animate-pulse">
+            {config.name}
           </span>
         </h1>
 
-        <p className="text-lg sm:text-xl md:text-2xl mt-4 text-white max-w-xl">
+        <p className="text-lg sm:text-xl md:text-2xl mt-6 text-white max-w-xl">
           {config.subtitle}
         </p>
 
-        {/* Social Icons */}
+        {/* Social Links */}
         <div className="flex gap-6 py-8">
-          {/* GitHub */}
           <a
             href={config.social.github}
             title="GitHub"
@@ -47,7 +46,6 @@ export default function Hero() {
             <span className="absolute inset-0 rounded-full blur-md opacity-60 group-hover:opacity-100 transition duration-500 bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-500 animate-pulse"></span>
           </a>
 
-          {/* Mail */}
           <a
             href={config.social.gmail}
             title="Email"
@@ -57,7 +55,6 @@ export default function Hero() {
             <span className="absolute inset-0 rounded-full blur-md opacity-60 group-hover:opacity-100 transition duration-500 bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-500 animate-pulse"></span>
           </a>
 
-          {/* LinkedIn */}
           <a
             href={config.social.linkedin}
             title="LinkedIn"
@@ -70,25 +67,23 @@ export default function Hero() {
           </a>
         </div>
 
-        {/* Contact Button */}
-        <div className="flex gap-4">
-          <a
-            href="#contact"
-            className="border border-white text-white px-6 py-2 rounded-full hover:bg-white hover:text-primary transition"
-          >
-            Let’s Connect
-          </a>
-        </div>
+        <a
+          href="#contact"
+          className="border border-white text-white px-6 py-2 rounded-full hover:bg-white hover:text-primary transition"
+        >
+          Let’s Connect
+        </a>
       </div>
 
-      {/* Right Image */}
-      <div className="relative">
-        <img
-          className="md:w-96 w-64 sm:w-72 rounded-full shadow-lg border-4 border-white"
-          src={HeroImg}
-          alt="Hero section image"
-        />
-        <div className="absolute -z-10 top-0 left-0 w-full h-full bg-gradient-to-tr from-pink-500 to-purple-500 rounded-full blur-3xl opacity-30"></div>
+      {/* Right Section - Image */}
+      <div className="md:w-1/2 flex justify-center mt-10 md:mt-0">
+      <img
+  src={HeroImg}
+  alt="Dhamayanthi M"
+  className="w-full max-w-[400px] h-[420px] object-cover rounded-t-[0.75rem] rounded-b-[3rem] transition-transform duration-500 hover:scale-105 shadow-xl"
+/>
+
+
       </div>
     </section>
   );
