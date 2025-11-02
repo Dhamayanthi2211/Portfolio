@@ -1,4 +1,4 @@
-import HeroImg from "../assets/DhamayPic1.jpg";
+import HeroImg from "../assets/DhamyPicBlack.jpg";
 import {
   AiOutlineGithub,
   AiOutlineMail,
