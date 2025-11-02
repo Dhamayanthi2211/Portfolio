@@ -32,20 +32,23 @@ export default function Projects() {
       {/* Glowing border ring */}
       <div className="absolute inset-0 border-4 border-fuchsia-500 rounded-xl opacity-10 blur-2xl pointer-events-none animate-pulse"></div>
 
+      {/* Section Heading */}
       <div className="w-full text-center mb-16 z-10">
         <h1
           className="text-6xl font-extrabold tracking-widest uppercase text-transparent bg-clip-text 
-  bg-gradient-to-r from-blue-400 via-yellow-400 via-violet-500 to-pink-500 
-  drop-shadow-[0_0_25px_#ff00ff] hover:drop-shadow-[0_0_45px_#ff00ff] 
-  transition-all duration-500 text-center mb-8"
+          bg-gradient-to-r from-blue-400 via-pink-500 to-purple-500 
+          drop-shadow-[0_0_25px_#ff00ff] hover:drop-shadow-[0_0_45px_#ff00ff] 
+          transition-all duration-500 text-center mb-8"
         >
           My Projects
         </h1>
 
         <p
-          className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed text-center 
-  bg-gradient-to-r from-fuchsia-500 via-pink-500 to-purple-600 bg-clip-text text-transparent 
-  drop-shadow-[0_0_10px_#fuchsia] hover:drop-shadow-[0_0_20px_#fuchsia] transition-all duration-500"
+          className="text-lg max-w-3xl mx-auto leading-relaxed text-center 
+          text-transparent bg-clip-text 
+          bg-gradient-to-r from-white via-fuchsia-200 to-violet-300 
+          drop-shadow-[0_0_15px_#ffb6ff] hover:drop-shadow-[0_0_25px_#ffb6ff] 
+          transition-all duration-500"
         >
           Explore my portfolio showcasing frontend, full-stack, and static
           website projects. Each one reflects technical expertise, creative
@@ -53,6 +56,7 @@ export default function Projects() {
         </p>
       </div>
 
+      {/* Projects Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 z-10">
         {projects.map((project, index) => (
           <div
@@ -66,6 +70,8 @@ export default function Projects() {
                 alt={`Project ${index + 1}`}
               />
             </div>
+
+            {/* Hover Description */}
             <div className="absolute inset-0 bg-black bg-opacity-80 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-center items-center text-center px-6">
               <p className="text-white text-base font-medium mb-4 leading-relaxed">
                 {project.description}
