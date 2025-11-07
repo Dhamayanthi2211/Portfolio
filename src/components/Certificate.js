@@ -14,7 +14,6 @@ import Cert10 from "../assets/Certificates/36th-Thanjavur-State-Poomsae.jpg";
 import Cert11 from "../assets/Certificates/36th-Thanjavur-State.jpg";
 import Cert12 from "../assets/Certificates/38th-Junior-Nationals-Bronze.jpg";
 import Cert14 from "../assets/Certificates/Form-2-Puducherry-Nationals.jpg";
-import Cert16 from "../assets/Certificates/Khelo-India-League-National.jpg";
 import Cert17 from "../assets/Certificates/Khelo-India-Nationals.jpg";
 import Cert18 from "../assets/Certificates/KheloIndiaLeagueNational.jpg";
 import Cert19 from "../assets/Certificates/South-Zone-Nationals-Gold.jpg";
@@ -51,7 +50,6 @@ export default function Certificate() {
     { title: "36th Thanjavur State", date: "2022", image: Cert11 },
     { title: "38th Junior Nationals Bronze", date: "2023", image: Cert12 },
     { title: "Form 2 Puducherry Nationals", date: "2023", image: Cert14 },
-    { title: "Khelo India League National", date: "2023", image: Cert16 },
     { title: "Khelo India Nationals", date: "2023", image: Cert17 },
     { title: "Khelo India League", date: "2023", image: Cert18 },
     { title: "South Zone Nationals Gold", date: "2024", image: Cert19 },

@@ -1,6 +1,7 @@
 import websiteImg1 from "../assets/book world project.png";
 import websiteImg2 from "../assets/Chatbot-Project.png";
 import websiteImg3 from "../assets/YOUTUBE PROJECT.png";
+import websiteImg4 from "../assets/Todo-image.png"; // ✅ Added your To-Do List image
 
 export default function Projects() {
   const projects = [
@@ -11,16 +12,22 @@ export default function Projects() {
       link: "https://dhamayanthi2211.github.io/BookWorld-Project/",
     },
     {
-      image: websiteImg2,
+      image: websiteImg3,
       description:
         "🎥 YouTube Clone: A responsive video streaming UI with search and playback features. Built with React and RapidAPI.",
       link: "https://dhamayanthi2211.github.io/Youtube-Project/",
     },
     {
-      image: websiteImg3,
+      image: websiteImg2,
       description:
         "🤖 Chatbot UI: A sleek and interactive chatbot interface with animated transitions. Built with HTML, CSS, and JavaScript.",
       link: "https://dhamayanthi2211.github.io/Chatbot-Project/",
+    },
+    {
+      image: websiteImg4,
+      description:
+        "📝 To-Do List App: A responsive task management app with CRUD operations, weekly progress tracking, and task status updates. Mobile & desktop friendly. Built with React (Vite).",
+      link: " https://dhamayanthi2211.github.io/ToDoList-Project/", // ✅ Your deployed GitHub Pages link
     },
   ];
 
